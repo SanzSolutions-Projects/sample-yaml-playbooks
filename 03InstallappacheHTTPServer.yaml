@@ -1,0 +1,26 @@
+---
+- hosts: all
+  gather_facts: no
+  become: no
+  tasks:
+    - name: Install Apache HTTP Server
+      yum:
+        name: httpd
+        state: present
+    - name: copy index.html file to show sample content
+      copy:
+        content: "Hello World! This is a sample page served by Apache HTTP Server."
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: '0644'
+    - name: Start and enable Apache HTTP Server
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+    - name: Start the Httpd service
+      service:
+        name: httpd
+        state: started
+...

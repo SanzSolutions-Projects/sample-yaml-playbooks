@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: no
+  become: no
+  vars:
+    companyName: Sanz Solutions
+    Owner: Santosh
+    Contact: +974 51798979
+  tasks:
+    - name: Display variable values
+      debug:
+        msg: "Company Name: {{ companyName }}, Owner: {{ Owner }}, Contact: {{ Contact }}"
+...

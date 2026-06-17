@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: no
+  become: no
+  tasks:
+    - name: Create the file
+      file:
+        path: /temp/samplefile.txt
+        owner: root
+        group: root
+        mode: '0644'
+        state: touch
+...
