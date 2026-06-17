@@ -9,7 +9,7 @@
         state: present
     - name: copy index.html file to show sample content
       copy:
-        content: "Hello World! This is a sample page served by Apache HTTP Server."
+        src: index.html
         dest: /var/www/html/index.html
         owner: root
         group: root
